@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./back-end # Directory where the BE Dockerfile is at
+      dockerfile: Dockerfile
+    ports:
+      - "5252:5252"  # Back-end port
+    image: ubuntu:latest
+
+  frontend:
+    build:
+      context: ./front-end  # Directory where the FE Dockerfile is at
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"  # Front-end port
+    image: nginx:latest
